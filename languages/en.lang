@@ -83,7 +83,7 @@ includes/handle/handleCommand.js
 
 handleCommand.userBanned=বক্স এ বেশি আবলামি করার কারণে তুমাকে ব্যান করা হয়েছে..!🚫
 handleCommand.threadBanned=Group Has Been Banned..!⛔️\nPlease Contact Owner SHAHADAT SAHU For Unban ⚠️
-handleCommand.commandNotExist=আমার নাম বট! আমাকে "বট" বল।
+handleCommand.commandNotExist= বট লিখে আমার প্রশ্ন করুন!
 handleCommand.commandThreadBanned=Your thread is unable to use command "%1"
 handleCommand.commandUserBanned=You are unable to use command "%1"
 handleCommand.threadNotAllowNSFW=This Commnd Only use Andmin
