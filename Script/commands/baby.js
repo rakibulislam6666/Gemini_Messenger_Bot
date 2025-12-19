@@ -4,24 +4,50 @@ const simsim = "https://simsimi.cyberbot.top";
 
 require("dotenv").config(); // dotenv থেকে environment variable load করবে
 const { GoogleGenAI } = require("@google/genai");
+const OpenAI = require("openai");
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
+//___________________________________________________________
+// const ai = new GoogleGenAI({
+//   apiKey: process.env.GEMINI_API_KEY,
+// });
+
+// async function aireply(userText) {
+//   try {
+//     const Ai_response = await ai.models.generateContent({
+//       model: "gemini-2.5-flash",
+//       contents: userText,
+//     });
+
+//     return Ai_response.text;
+//   } catch (error) {
+//     console.error("AI Error:", error);
+//     return `Error: ${error.message}`;
+//   }
+// }
+
+//------------------------------------------------
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 async function aireply(userText) {
-  try {
-    const Ai_response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: userText,
-    });
+   try {
+const Ai_response = await openai.responses.create({
+  model: "gpt-5-nano",
+  input: userText,
+  store: true,
+});
 
-    return Ai_response.text;
+   return Ai_response.text;
   } catch (error) {
     console.error("AI Error:", error);
     return `Error: ${error.message}`;
   }
 }
+
+//response.then((result) => console.log(result.output_text));
+//............................................................
 
 module.exports.config = {
   name: "baby",
